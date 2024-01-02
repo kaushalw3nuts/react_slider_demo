@@ -70,6 +70,8 @@ textarea {
 	resize: none;
 }
 
+h1, h2, h3, h4, h5, h6, p { margin: 0; }
+
 h1 { font-size: 70px; font-style: normal; }
 h2 { font-size: 60px; font-style: normal; }
 h3 { font-size: 50px; font-style: normal; }
@@ -115,3 +117,9 @@ p { font-size: 20px; font-style: normal; }
 .slick_section .group { border: none; background: transparent; }
 .slick_section .left { position: absolute; bottom: 0; left: 50%; transform: translate(-100%, 0); z-index: 11; }
 .slick_section .right { position: absolute; bottom: 0; right: 50%; transform: translate(100%, 0); z-index: 11; padding-left: 20px; }
+
+
+.map_section .textbox h5 { margin-bottom: 10px; }
+.map_section .textbox p { color: #000000; font-weight: 400; line-height: normal; margin: 0 0 10px 0; }
+.map_section .textbox i { color: #757575; line-height: normal; margin: 0; font-style: normal; font-size: 16px; }
+.map_section .textbox i + h5 { margin-top: 20px; }

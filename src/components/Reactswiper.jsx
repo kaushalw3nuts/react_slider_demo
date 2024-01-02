@@ -8,25 +8,43 @@ import Newsimg2 from "@/assets/images/news2.png";
 import Newsimg3 from "@/assets/images/news3.png";
 import Newsimg4 from "@/assets/images/news4.png";
 import Newsimg5 from "@/assets/images/news5.png";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useInView } from 'react-intersection-observer';
 
 
 const SwiperSliderComponent = () => {
 
+	const [inViewRef, inView] = useInView({
+		triggerOnce: true,
+	});
+
+	const [addClass, setAddClass] = useState(false);
+
+	useEffect (() => {
+		if (inView && !addClass) {
+			// Add a delay of 1000 milliseconds (1 second) before adding the class
+			const delayTimeout = setTimeout(() => {
+				setAddClass(true);
+			}, 50);
+
+			// Clear the timeout if the component goes out of view before the delay
+			return () => clearTimeout(delayTimeout);
+		}
+	}, [inView, addClass])
+
 	const swiperRef = useRef();
 	const sliderSettings = {
-		767: {
+		0: {
 			slidesPerView: 1,
 		},
-		991: {
+		768: {
 			slidesPerView: 2,
 		},
-		1199: {
+		992: {
 			slidesPerView: 3,
 		},
-		1300: {
-			slidesPerView: 3,
-		},
-		1301: {
+		1200: {
 			slidesPerView: 4,
 		},
 	};
@@ -36,7 +54,27 @@ const SwiperSliderComponent = () => {
 			<div className="swiper_section">
 				<div className="container">
 					<div className="title">
-						<h3>swiper slider</h3>
+						<h3>
+							<div className={`word_wrap ${addClass ? 'visible' : ''}`} ref={inViewRef}>
+								{
+									'swiper slider'.split(" ").map(function (word, index) {
+										let style = { "animationDelay": (0.2 + index / 10) + "s" }
+										let customeVal = word
+										const totalLength = 'swiper slider'.split(" ").length
+										if (index !== (totalLength - 1)) {
+											customeVal = word
+										}
+
+										return (
+											<React.Fragment key={index}>
+												<div className="word" style={style}>{word}</div>
+												<span className="word">&nbsp;</span>
+											</React.Fragment>
+										);
+									}
+								)}
+							</div>
+						</h3>
 					</div>
 					<Swiper className="swiper_slider"
 						loop={true}

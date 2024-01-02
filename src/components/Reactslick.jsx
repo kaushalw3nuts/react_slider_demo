@@ -8,8 +8,31 @@ import Newsimg2 from "@/assets/images/news2.png";
 import Newsimg3 from "@/assets/images/news3.png";
 import Newsimg4 from "@/assets/images/news4.png";
 import Newsimg5 from "@/assets/images/news5.png";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useInView } from 'react-intersection-observer';
+import React from "react";
 
 const SlickSliderComponent = () => {
+
+	const [inViewRef, inView] = useInView({
+		triggerOnce: true,
+	});
+
+	const [addClass, setAddClass] = useState(false);
+
+	useEffect (() => {
+		if (inView && !addClass) {
+			// Add a delay of 1000 milliseconds (1 second) before adding the class
+			const delayTimeout = setTimeout(() => {
+				setAddClass(true);
+			}, 50);
+
+			// Clear the timeout if the component goes out of view before the delay
+			return () => clearTimeout(delayTimeout);
+		}
+	}, [inView, addClass])
+
 	const ArrowLeft = (props) => (
 		<button {...props} className="left group">
 			<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,9 +61,9 @@ const SlickSliderComponent = () => {
 		nextArrow: <ArrowRight />,
 		responsive: [
 			{
-				breakpoint: 1400,
+				breakpoint: 1399,
 				settings: {
-				  slidesToShow: 4,
+				  slidesToShow: 3,
 				}
 			},
 			{
@@ -75,7 +98,27 @@ const SlickSliderComponent = () => {
 			<div className="slick_section">
 				<div className="container">
 					<div className="title">
-						<h3>slick slider</h3>
+						<h3>
+							<div className={`word_wrap ${addClass ? 'visible' : ''}`} ref={inViewRef}>
+								{
+									'slick slider'.split(" ").map(function (word, index) {
+										let style = { "animationDelay": (0.2 + index / 10) + "s" }
+										let customeVal = word
+										const totalLength = 'slick slider'.split(" ").length
+										if (index !== (totalLength - 1)) {
+											customeVal = word
+										}
+
+										return (
+											<React.Fragment key={index}>
+												<div className="word" style={style}>{word}</div>
+												<span className="word">&nbsp;</span>
+											</React.Fragment>
+										);
+									}
+								)}
+							</div>
+						</h3>
 					</div>
 					<div className="slick_slider_wrap">
 						<Slider {...settings}>

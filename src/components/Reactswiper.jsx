@@ -15,6 +15,39 @@ import { useInView } from 'react-intersection-observer';
 
 const SwiperSliderComponent = () => {
 
+	const swiperwrap = [
+        {
+			imgsrc: Newsimg1,
+			imgalt: 'Newsblkimg1',
+            text: 'Powerful podcast episode is now in your area just enjoy',
+			date: '18 June, 2021',
+        },
+        {
+			imgsrc: Newsimg2,
+			imgalt: 'Newsblkimg2',
+			text: 'Powerful podcast episode is now in your area just enjoy',
+			date: '18 June, 2021',
+        },
+        {
+			imgsrc: Newsimg3,
+			imgalt: 'Newsblkimg3',
+            text: 'Powerful podcast episode is now in your area just enjoy',
+			date: '18 June, 2021',
+        },
+		{
+			imgsrc: Newsimg4,
+			imgalt: 'Newsblkimg4',
+			text: 'Powerful podcast episode is now in your area just enjoy',
+			date: '18 June, 2021',
+		},
+        {
+			imgsrc: Newsimg5,
+			imgalt: 'Newsblkimg5',
+			text: 'Powerful podcast episode is now in your area just enjoy',
+			date: '18 June, 2021',
+        },
+	]
+
 	const [inViewRef, inView] = useInView({
 		triggerOnce: true,
 	});
@@ -87,61 +120,24 @@ const SwiperSliderComponent = () => {
 						swiperRef.current = swiper;
 						}}
 					>
-						<SwiperSlide>
-							<Link href="#" className="box_slider">
-								<div className="image_box_slider">
-									<Image src={Newsimg1} alt="Newsblkimg1"/>
-								</div>
-								<div className="image_slider_dtl">
-									<p>Powerful podcast episode is now in your area just enjoy</p>
-									<div className="date_newsblock">18 June, 2021</div>
-								</div>
-							</Link>
-						</SwiperSlide>
-						<SwiperSlide>
-							<Link href="#" className="box_slider">
-								<div className="image_box_slider">
-									<Image src={Newsimg2} alt="Newsblkimg2"/>
-								</div>
-								<div className="image_slider_dtl">
-									<p>Powerful podcast episode is now in your area just enjoy</p>
-									<div className="date_newsblock">18 June, 2021</div>
-								</div>
-							</Link>
-						</SwiperSlide>
-						<SwiperSlide>
-							<Link href="#" className="box_slider">
-								<div className="image_box_slider">
-									<Image src={Newsimg3} alt="Newsblkimg3"/>
-								</div>
-								<div className="image_slider_dtl">
-									<p>Powerful podcast episode is now in your area just enjoy</p>
-									<div className="date_newsblock">18 June, 2021</div>
-								</div>
-							</Link>
-						</SwiperSlide>
-						<SwiperSlide>
-							<Link href="#" className="box_slider">
-								<div className="image_box_slider">
-									<Image src={Newsimg4} alt="Newsblkimg4"/>
-								</div>
-								<div className="image_slider_dtl">
-									<p>Powerful podcast episode is now in your area just enjoy</p>
-									<div className="date_newsblock">18 June, 2021</div>
-								</div>
-							</Link>
-						</SwiperSlide>
-						<SwiperSlide>
-							<Link href="#" className="box_slider">
-								<div className="image_box_slider">
-									<Image src={Newsimg5} alt="Newsblkimg5"/>
-								</div>
-								<div className="image_slider_dtl">
-									<p>Powerful podcast episode is now in your area just enjoy</p>
-									<div className="date_newsblock">18 June, 2021</div>
-								</div>
-							</Link>
-						</SwiperSlide>
+						{
+							swiperwrap.map((swiperwrapper, index) => {
+								const {imgsrc, imgalt, text, date} = swiperwrapper
+								return (
+									<SwiperSlide key={index}>
+										<Link href="#" className="box_slider">
+											<div className="image_box_slider">
+												<Image src={imgsrc} alt={imgalt}/>
+											</div>
+											<div className="image_slider_dtl">
+												<p>{text}</p>
+												<div className="date_newsblock">{date}</div>
+											</div>
+										</Link>
+									</SwiperSlide>
+								)
+							})
+						}
 					</Swiper>
 					<div className="switer_btn">
 						<button onClick={() => swiperRef.current?.slidePrev()} className="group">

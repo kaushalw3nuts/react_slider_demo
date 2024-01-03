@@ -3,6 +3,7 @@ import Reactswiper from '@/components/Reactswiper';
 import Reactslick from '@/components/Reactslick';
 import Textanimation from '@/components/Textanimation';
 import Mapmathode from '@/components/Mapmathode';
+import ScrollLineAnimation from '@/components/ScrollLineAnimation';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Reactswiper />
       <Reactslick />
       <Textanimation />
+      <ScrollLineAnimation />
       <Mapmathode />
     </>
   )

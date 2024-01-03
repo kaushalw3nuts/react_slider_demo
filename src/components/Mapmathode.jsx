@@ -77,14 +77,14 @@ const Mapmathode = () => {
 					</div>
 					<div className="textbox">
 						{
-							detail.map((content) => {
+							detail.map((content, index) => {
 								const {name,address,description} = content
 								return (
-									<>
+									<React.Fragment key={index}>
 										<h5>{name}</h5>
 										<p>{address}</p>
 										<i>{description}</i>
-									</>
+									</React.Fragment>
 								)
 							})
 						}

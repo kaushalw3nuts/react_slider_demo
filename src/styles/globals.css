@@ -123,3 +123,16 @@ p { font-size: 20px; font-style: normal; }
 .map_section .textbox p { color: #000000; font-weight: 400; line-height: normal; margin: 0 0 10px 0; }
 .map_section .textbox i { color: #757575; line-height: normal; margin: 0; font-style: normal; font-size: 16px; }
 .map_section .textbox i + h5 { margin-top: 20px; }
+
+
+.strategy { padding: 160px 0; background: #000000; }
+.strategy_section .text_section h4 { color: #FFFFFF; font-weight: 700; margin: 0; max-width: 480px; }
+.strategy_section .strategy_step { position: relative; }
+.strategy_section .strategy_step .timeline-line .line-default { position: absolute; top: 0; left: 0; height: 100%; width: 2px; background: #757575; }
+.strategy_section .strategy_step .timeline-line .line-fill { position: absolute; top: 0; left: 0; width: 2px; background: #FFFFFF; z-index: 2; }
+.strategy_section .strategy_step .step_box { padding: 60px 0 60px 24px; }
+.strategy_section .strategy_step .step_box .content_box span { color: #757575; font-size: 24px; font-weight: 700; display: block; margin-bottom: 12px; }
+.strategy_section .strategy_step .step_box .content_box p { color: #757575; font-weight: 500; line-height: 1.625; margin: 0; }
+.strategy_section .strategy_step .step_box .content_box.highlight span { color: #FFFFFF; }
+.strategy_section .strategy_step .step_box .content_box.highlight p { color: #FFFFFF; }
+.strategy_section .strategy_step .step_box .content_box + .content_box { margin-top: 96px; }

@@ -119,6 +119,18 @@ p { font-size: 20px; font-style: normal; }
 .slick_section .right { position: absolute; bottom: 0; right: 50%; transform: translate(100%, 0); z-index: 11; padding-left: 20px; }
 
 
+.award { padding: 120px 0 0 0; background: #000000; }
+.award_section { position: relative; display: flex; align-items: center; flex-direction: column; justify-content: center; padding: 40% 0 30% 0; }
+.award_section .image { display: flex; height: 686px; width: 427px; position: absolute; top: 20%; }
+.award_section .image img { width: 100%; height: auto; max-width: 100%; max-height: 100%; object-fit: cover; }
+.award_section .first_img { position: absolute; top: 28%; left: 12%; z-index: 10; }
+.award_section .second_img { position: absolute; bottom: 4%; right: 16%; }
+.award_section .third_img { position: absolute; bottom: 20%; left: 22%; }
+.award_section .fourth_img { position: absolute; bottom: 40%; right: 20%; }
+.award_section .award_text { position: absolute; top: 30%; transform: translate(0, -30%); }
+.award_section .award_text h2 { text-align: center; color: #FFFFFF; font-weight: 700; margin: 0; }
+
+
 .map_section .textbox h5 { margin-bottom: 10px; }
 .map_section .textbox p { color: #000000; font-weight: 400; line-height: normal; margin: 0 0 10px 0; }
 .map_section .textbox i { color: #757575; line-height: normal; margin: 0; font-style: normal; font-size: 16px; }
@@ -136,3 +148,24 @@ p { font-size: 20px; font-style: normal; }
 .strategy_section .strategy_step .step_box .content_box.highlight span { color: #FFFFFF; }
 .strategy_section .strategy_step .step_box .content_box.highlight p { color: #FFFFFF; }
 .strategy_section .strategy_step .step_box .content_box + .content_box { margin-top: 96px; }
+
+
+
+.wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background: #757575;
+}
+
+section {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.first_wrap { height: 100vh; }
+.first_wrap h2 { transition: all ease-in-out 0.2s; }
+.first_wrap.wrapper_demo h2 { transform: scale(2); }

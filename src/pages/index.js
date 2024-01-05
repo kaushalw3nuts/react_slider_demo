@@ -4,6 +4,8 @@ import Reactslick from '@/components/Reactslick';
 import Textanimation from '@/components/Textanimation';
 import Mapmathode from '@/components/Mapmathode';
 import ScrollLineAnimation from '@/components/ScrollLineAnimation';
+import Award from '@/components/Award';
+import HorizontalAnimation from '@/components/HorizontalAnimation';
 
 export default function Home() {
   return (
@@ -13,8 +15,10 @@ export default function Home() {
       </Head>
       <Reactswiper />
       <Reactslick />
+      <Award />
       <Textanimation />
       <ScrollLineAnimation />
+      <HorizontalAnimation />
       <Mapmathode />
     </>
   )

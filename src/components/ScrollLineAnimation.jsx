@@ -23,15 +23,6 @@ const ScrollLineAnimation = () => {
 				},
 			});
 		});
-		// gsap.from(".strategy_step", {
-		// 	scrollTrigger: {
-		// 		trigger: ".strategy_step",
-		// 		pin: true,
-		// 		pinSpacing: false,
-		// 		start: "top top",
-    	// 		end: "top top",
-		// 	},
-		// });
 		gsap.to(".timeline-line .line-fill", {
 			height: '100%',
 			ease: 'linear',

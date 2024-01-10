@@ -10,7 +10,7 @@ const HorizontalAnimation = () => {
 	useEffect(() => {
 		const sectionsWrap = gsap.utils.toArray(".first_wrap");
 
-		sectionsWrap.forEach(elem => {
+		sectionsWrap.forEach((elem, index) => {
 			var tl = gsap.timeline({
 				scrollTrigger: {
 					trigger: elem,
@@ -19,7 +19,7 @@ const HorizontalAnimation = () => {
 					pinSpacing: false,
 					pinSpacer: false,
 					start: "top top",
-					end: "bottom +30%",
+					end: index === sectionsWrap.length - 1 ? "+=20%" : "bottom +30%",
 					toggleClass: "wrapper_demo",
 					markers: true,
 				},

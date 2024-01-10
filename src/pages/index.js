@@ -17,8 +17,8 @@ export default function Home() {
       <Reactslick />
       <Award />
       <Textanimation />
-      <ScrollLineAnimation />
       <HorizontalAnimation />
+      <ScrollLineAnimation />
       <Mapmathode />
     </>
   )

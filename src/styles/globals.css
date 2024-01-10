@@ -155,7 +155,6 @@ p { font-size: 20px; font-style: normal; }
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	background: #757575;
 }
 
 section {
@@ -164,8 +163,12 @@ section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transform: translate(0, 0) !important;
 }
 
 .first_wrap { height: 100vh; }
 .first_wrap h2 { transition: all ease-in-out 0.2s; }
 .first_wrap.wrapper_demo h2 { transform: scale(2); }
+.bl_bg { background: #757575; }
+.gr_bg { background: brown; }
+.rd_bg { background: darkgreen; }

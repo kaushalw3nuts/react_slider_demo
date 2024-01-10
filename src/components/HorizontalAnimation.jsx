@@ -16,22 +16,14 @@ const HorizontalAnimation = () => {
 					trigger: elem,
 					scrub: true,
 					pin: true,
-					pinSpacer: false,
 					pinSpacing: false,
-					start: "top center",
-					end: "bottom top",
+					pinSpacer: false,
+					start: "top top",
+					end: "bottom +30%",
 					toggleClass: "wrapper_demo",
+					markers: true,
 				},
 			});
-		});
-		gsap.to(".wrapper_demo", {
-			scrollTrigger: {
-				trigger: ".wrapper",
-				scrub: true,
-				start: "top top",
-				end: "bottom top",
-				markers: true,
-			}
 		});
 	}, []);
 	
@@ -39,13 +31,13 @@ const HorizontalAnimation = () => {
 	return (
 		<>
 			<div className="wrapper">
-				<section className="first_wrap">
+				<section className="first_wrap bl_bg">
 					<h2>NAME</h2>
 				</section>
-				<section className="first_wrap">
+				<section className="first_wrap gr_bg">
 					<h2>FIRST</h2>
 				</section>
-				<section className="first_wrap">
+				<section className="first_wrap rd_bg">
 					<h2>SECOND</h2>
 				</section>
 			</div>

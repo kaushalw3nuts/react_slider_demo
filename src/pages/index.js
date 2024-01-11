@@ -6,6 +6,7 @@ import Mapmathode from '@/components/Mapmathode';
 import ScrollLineAnimation from '@/components/ScrollLineAnimation';
 import Award from '@/components/Award';
 import HorizontalAnimation from '@/components/HorizontalAnimation';
+import HorizontalprogressAnimation from '@/components/HorizontalprogressAnimation';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <HorizontalAnimation />
       <ScrollLineAnimation />
       <Mapmathode />
+      <HorizontalprogressAnimation />
     </>
   )
 }

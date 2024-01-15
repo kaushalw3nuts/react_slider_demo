@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
@@ -8,20 +8,35 @@ gsap.registerPlugin(ScrollTrigger);
 const HorizontalprogressAnimation = () => {
 
 	useEffect(() => {
-		gsap.to(".sec_pro_wrap:not(:last-child)", {
-			yPercent: -100, 
-			ease: "none",
-			stagger: 0.5,
-			scrollTrigger: {
-				trigger: ".sec_pro",
-				start: "top top",
-				end: "+=300%",
+		const sectionsWrap = gsap.utils.toArray(".sec_pro_wrap");
+	
+		sectionsWrap.forEach((elem, index) => {
+			gsap.timeline({
+				scrollTrigger: {
+				trigger: elem,
 				scrub: true,
 				pin: true,
+				pinSpacing: false,
+				pinSpacer: false,
+				start: "top top",
+				end: index === sectionsWrap.length - 1 ? "+=20%" : "bottom +30%",
+				toggleClass: {
+					targets: ".sec_pro",
+					className: "wrapper_demo",
+				},
 				markers: true,
-			}
+				},
+			})
+		  	.from(elem, {
+				duration: 0.5
+			}) // Fade in each section
+		  	.to(elem.querySelector("h4"), {
+				scale: 1.5, 
+				duration: 1 
+			}, "<"); // Scale the h4 element
 		});
 	}, []);
+
 	return (
 		<>
 			<div className="sec_pro">

@@ -163,3 +163,6 @@ section { width: 100%; height: 100vh; display: flex; align-items: center; justif
 .sec_pro { width: 100%; display: flex; flex-direction: column; transform: translate(0, 0) !important; }
 .sec_pro section { width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; transform: translate(0, 0) !important; }
 .sec_pro_wrap { height: 100vh; }
+.sec_pro .bl_bg { background: #757575; }
+.sec_pro .gr_bg { background: brown; }
+.sec_pro .rd_bg { background: darkgreen; }

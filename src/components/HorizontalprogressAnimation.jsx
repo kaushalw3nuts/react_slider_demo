@@ -7,33 +7,50 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HorizontalprogressAnimation = () => {
 
+	// useEffect(() => {
+	// 	const sectionsWrapPart = gsap.utils.toArray(".sec_pro_wrap");
+
+	// 	sectionsWrapPart.forEach((content, index) => {
+	// 		const char = gsap.timeline({
+	// 			scrollTrigger: {
+	// 				trigger: content,
+	// 				start: "top top", 
+	// 				end: index === sectionsWrapPart.length - 1 ? "+=20%" : "bottom +30%",
+	// 				scrub: true,
+	// 				pin: true,
+	// 				pinSpacer: false,
+	// 				pinSpacing: false,
+	// 				markers: true,
+	// 			},
+	// 		});
+	// 	});
+	// }, []); 
+
 	useEffect(() => {
-		const sectionsWrap = gsap.utils.toArray(".sec_pro_wrap");
-	
-		sectionsWrap.forEach((elem, index) => {
-			gsap.timeline({
-				scrollTrigger: {
-				trigger: elem,
+		// Initialize GSAP timeline
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".sec_pro",
+				start: "top top",
+				end: "bottom +30%",
 				scrub: true,
+			},
+		});
+	
+		// Animation for each section
+		tl.from(".sec_pro_wrap h4", {
+			scale: 2,
+		});
+	
+		// Add class to each section on scroll
+		gsap.utils.toArray(".sec_pro_wrap").forEach((section, index) => {
+			ScrollTrigger.create({
+				trigger: section,
+				start: "top center",
 				pin: true,
 				pinSpacing: false,
 				pinSpacer: false,
-				start: "top top",
-				end: index === sectionsWrap.length - 1 ? "+=20%" : "bottom +30%",
-				toggleClass: {
-					targets: ".sec_pro",
-					className: "wrapper_demo",
-				},
-				markers: true,
-				},
-			})
-		  	.from(elem, {
-				duration: 0.5
-			}) // Fade in each section
-		  	.to(elem.querySelector("h4"), {
-				scale: 1.5, 
-				duration: 1 
-			}, "<"); // Scale the h4 element
+			});
 		});
 	}, []);
 

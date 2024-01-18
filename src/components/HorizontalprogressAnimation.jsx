@@ -1,71 +1,52 @@
 import Image from "next/image";
-import { useEffect } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import Link from "next/link";
+import { useState } from "react";
 
 const HorizontalprogressAnimation = () => {
 
-	// useEffect(() => {
-	// 	const sectionsWrapPart = gsap.utils.toArray(".sec_pro_wrap");
+	const [actbtn, setactBtn] = useState(false);
+	const actHandler = () => {
+		setactBtn(!actbtn);
+	}
 
-	// 	sectionsWrapPart.forEach((content, index) => {
-	// 		const char = gsap.timeline({
-	// 			scrollTrigger: {
-	// 				trigger: content,
-	// 				start: "top top", 
-	// 				end: index === sectionsWrapPart.length - 1 ? "+=20%" : "bottom +30%",
-	// 				scrub: true,
-	// 				pin: true,
-	// 				pinSpacer: false,
-	// 				pinSpacing: false,
-	// 				markers: true,
-	// 			},
-	// 		});
-	// 	});
-	// }, []); 
+	const [counter, setCounter] = useState(10);
+	const counterHandler = () => {
+		setCounter(counter + 6);
+	}
 
-	useEffect(() => {
-		// Initialize GSAP timeline
-		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: ".sec_pro",
-				start: "top top",
-				end: "bottom +30%",
-				scrub: true,
-			},
-		});
+	const [textwrap, setTextwrap] = useState('Prit Kaka');
+	const textHandler = (e) => {
+		setTextwrap(e.target.value);
+	}
+
+	const [check, setCheck] = useState(false);
+	const checkHandler = (e) => {
+		setCheck(e.target.checked)
+	}
 	
-		// Animation for each section
-		tl.from(".sec_pro_wrap h4", {
-			scale: 2,
-		});
-	
-		// Add class to each section on scroll
-		gsap.utils.toArray(".sec_pro_wrap").forEach((section, index) => {
-			ScrollTrigger.create({
-				trigger: section,
-				start: "top center",
-				pin: true,
-				pinSpacing: false,
-				pinSpacer: false,
-			});
-		});
-	}, []);
-
 	return (
 		<>
 			<div className="sec_pro">
-				<section className="sec_pro_wrap bl_bg">
-					<h4>POST</h4>
-				</section>
-				<section className="sec_pro_wrap gr_bg">
+				<div className="wrap">
+					<Link href="javascript:void(0);" className="bl_bg" onClick={actHandler}>POST</Link>
+				</div>
+				<section className={`sec_pro_wrap gr_bg ${actbtn ? 'back_wrap' : ' '}`}>
 					<h4>TIME</h4>
 				</section>
-				<section className="sec_pro_wrap rd_bg">
-					<h4>UX</h4>
-				</section>
+				<div className="count_wrap">
+					<Link href="javascript:void(0);" className="count_btn">You pressed me <span onClick={counterHandler}>{counter}</span> times</Link>
+				</div>
+				<div className="text_string">
+					<input type="text" value={textwrap} onChange={textHandler} />
+					<p>Type: {textwrap}</p>
+				</div>
+				<div className="checkbox_section">
+					<label>
+						<input type="checkbox" checked={check} onChange={checkHandler} />
+						I liked this
+					</label>
+					<p>You {check ? 'liked' : 'did not like'} this.</p>
+				</div>
 			</div>
 		</>
 	);

@@ -21,7 +21,6 @@ const HorizontalAnimation = () => {
 					start: "top top",
 					end: index === sectionsWrap.length - 1 ? "+=20%" : "bottom +30%",
 					toggleClass: "wrapper_demo",
-					markers: false,
 				},
 			});
 		});

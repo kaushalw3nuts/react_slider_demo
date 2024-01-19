@@ -118,6 +118,9 @@ body.open_nav { overflow: hidden; }
 .main_header .menu-toggler.active .menu-toggler-icon::before { -webkit-transition-delay: 0s, .3s; transition-delay: 0s, .3s; }
 
 
+.dot_wrapper { height: 30px; width: 30px; background: #FFFFFF; border-radius: 50%; display: block; position: fixed; left: -10px; top: -10px; pointer-events: none; z-index: 111; opacity: 0.5; }
+
+
 .swiper_section { position: relative; margin: 30px 0; }
 .swiper_section .swiper_slider { padding-bottom: 60px; }
 .swiper_section .swiper_slider .box_slider { position: relative; overflow: hidden; max-width: 310px; text-decoration: none; }

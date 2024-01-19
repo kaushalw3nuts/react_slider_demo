@@ -31,7 +31,9 @@ const HorizontalprogressAnimation = () => {
 					<Link href="javascript:void(0);" className="bl_bg" onClick={actHandler}>POST</Link>
 				</div>
 				<section className={`sec_pro_wrap gr_bg ${actbtn ? 'back_wrap' : ' '}`}>
-					<h4>TIME</h4>
+					<div className="scale_demo">
+						<h4>TIME</h4>
+					</div>
 				</section>
 				<div className="count_wrap">
 					<Link href="javascript:void(0);" className="count_btn">You pressed me <span onClick={counterHandler}>{counter}</span> times</Link>

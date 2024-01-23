@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/assets/images/MurderMania-Logo.svg";
 import { useEffect, useState } from "react";
+import { gsap } from "gsap";
 
 
 const Header = () => {
@@ -20,6 +21,28 @@ const Header = () => {
 		const bodyElement = document.body;
 		bodyElement.classList.toggle('open_nav');
 	}
+
+	const [dot, setDot] = useState({ x: 0, y: 0 });
+	const [isOverScaleDemo, setIsOverScaleDemo] = useState(false);
+	useEffect(() => {
+		const positionHandler = (e) => {
+			const scaleDemoElement = document.querySelector(".scale_demo");
+			const isOver = scaleDemoElement ? scaleDemoElement.contains(e.target) : false;
+			gsap.to(".dot_wrapper", {
+				duration: 0.3,
+				x: e.clientX,
+				y: e.clientY,
+				scale: isOver ? 2 : 1,
+				ease: "power2.out",
+			});
+			setDot({ x: e.clientX, y: e.clientY });
+			setIsOverScaleDemo(isOver);
+		};
+		window.addEventListener("pointermove", positionHandler);
+		return () => {
+			window.removeEventListener("pointermove", positionHandler);
+		};
+	}, []);
 
 	return (
 		<>
@@ -42,6 +65,7 @@ const Header = () => {
 						</div>
 					</div>
 				</div>
+				<div className="dot_wrapper" style={{transform: `translate(${dot.x}px, ${dot.y}px)`}} />
 			</div>
 		</>
 	)

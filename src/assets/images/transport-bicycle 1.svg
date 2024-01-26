@@ -1,0 +1,17 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path d="M407.2 284.799L342.4 99.1992" stroke="white" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M384.8 220.801L227.2 358.401H160.8" stroke="white" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M227.2 358.401V220.801" stroke="white" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M263.2 220.802H191.2C182.4 220.802 175.2 213.602 175.2 204.802V201.602C175.2 192.802 182.4 185.602 191.2 185.602H263.2C272 185.602 279.2 192.802 279.2 201.602V204.802C279.2 213.602 272 220.802 263.2 220.802Z" fill="white" stroke="white" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M296 115.2L388 84" stroke="white" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M84.8 435.202C127.215 435.202 161.6 400.817 161.6 358.402C161.6 315.986 127.215 281.602 84.8 281.602C42.3845 281.602 8 315.986 8 358.402C8 400.817 42.3845 435.202 84.8 435.202Z" fill="black" stroke="white" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M84.8 281.602V435.202" stroke="white" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M160.8 358.398H8" stroke="white" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M138.4 412.8L30.4 304" stroke="white" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M30.4 412.8L138.4 304" stroke="white" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M427.2 434.398C469.616 434.398 504 400.372 504 358.398C504 316.425 469.616 282.398 427.2 282.398C384.785 282.398 350.4 316.425 350.4 358.398C350.4 400.372 384.785 434.398 427.2 434.398Z" fill="black" stroke="white" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M427.2 282.398V434.398" stroke="white" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M504 358.398H351.2" stroke="white" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M481.6 412.8L373.6 304" stroke="white" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M373.6 412.8L481.6 304" stroke="white" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

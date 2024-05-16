@@ -53,6 +53,8 @@ const SwiperSliderComponent = () => {
 	});
 
 	const [addClass, setAddClass] = useState(false);
+	const [isBeginning, setIsBeginning] = useState(true);
+    const [isEnd, setIsEnd] = useState(false);
 
 	useEffect (() => {
 		if (inView && !addClass) {
@@ -110,15 +112,21 @@ const SwiperSliderComponent = () => {
 						</h3>
 					</div>
 					<Swiper className="swiper_slider"
-						loop={true}
+						loop={false}
 						slidesPerView={4}
 						spaceBetween={20}
 						breakpoints={sliderSettings}
 						// navigation={true}
 						// modules={[Navigation]}
 						onBeforeInit={(swiper) => {
-						swiperRef.current = swiper;
+							swiperRef.current = swiper;
 						}}
+						onSlideChange={(swiper) => {
+                            setIsBeginning(swiper.isBeginning);
+                            setIsEnd(swiper.isEnd);
+                        }}
+                        onReachBeginning={() => setIsBeginning(true)}
+                        onReachEnd={() => setIsEnd(true)}
 					>
 						{
 							swiperwrap.map((swiperwrapper, index) => {
@@ -140,13 +148,13 @@ const SwiperSliderComponent = () => {
 						}
 					</Swiper>
 					<div className="switer_btn">
-						<button onClick={() => swiperRef.current?.slidePrev()} className="group">
+						<button onClick={() => swiperRef.current?.slidePrev()} className={`group ${isBeginning ? 'disable_arrow' : ''}`}>
 							<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<circle cx="20" cy="20" r="19" stroke="#E12929" strokeWidth="2"/>
 								<path d="M18 27L11 20M11 20L18 13M11 20L29 20" stroke="#E12929" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 							</svg>
 						</button>
-						<button onClick={() => swiperRef.current?.slideNext()} className="group">
+						<button onClick={() => swiperRef.current?.slideNext()} className={`group ${isEnd ? 'disable_arrow' : ''}`}>
 							<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<circle cx="20" cy="20" r="19" stroke="#E12929" strokeWidth="2"/>
 								<path d="M22 13L29 20M29 20L22 27M29 20L11 20" stroke="#E12929" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
